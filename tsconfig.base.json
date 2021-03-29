@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@enterprise-angular/auth": ["libs/auth/src/index.ts"]
+      "@enterprise-angular/auth": ["libs/auth/src/index.ts"],
+      "@enterprise-angular/data-models": ["libs/data-models"],
     }
   },
   "exclude": ["node_modules", "tmp"]
