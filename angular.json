@@ -1,7 +1,8 @@
 {
   "version": 1,
   "cli": {
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@nrwl/angular",
+    "analytics": false
   },
   "defaultProject": "enteprise-ng",
   "schematics": {
@@ -51,7 +52,9 @@
               "apps/enteprise-ng/src/favicon.ico",
               "apps/enteprise-ng/src/assets"
             ],
-            "styles": ["apps/enteprise-ng/src/styles.scss"],
+            "styles": [
+              "apps/enteprise-ng/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -112,7 +115,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/enteprise-ng"],
+          "outputs": [
+            "coverage/apps/enteprise-ng"
+          ],
           "options": {
             "jestConfig": "apps/enteprise-ng/jest.config.js",
             "passWithNoTests": true
@@ -141,7 +146,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/enteprise-ng-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/enteprise-ng-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -163,7 +170,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/auth"],
+          "outputs": [
+            "coverage/libs/auth"
+          ],
           "options": {
             "jestConfig": "libs/auth/jest.config.js",
             "passWithNoTests": true
