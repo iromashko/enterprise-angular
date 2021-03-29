@@ -1,10 +1,6 @@
 {
-  "npmScope": "enterprise-angular",
-  "affected": {
-    "defaultBase": "master"
-  },
   "implicitDependencies": {
-    "workspace.json": "*",
+    "angular.json": "*",
     "package.json": {
       "dependencies": "*",
       "devDependencies": "*"
@@ -14,18 +10,25 @@
     ".eslintrc.json": "*",
     "nx.json": "*"
   },
+  "affected": {
+    "defaultBase": "master"
+  },
+  "npmScope": "enterprise-angular",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
       }
     }
   },
-  "projects": {}
+  "projects": {
+    "enteprise-ng": {
+      "tags": []
+    },
+    "enteprise-ng-e2e": {
+      "tags": [],
+      "implicitDependencies": ["enteprise-ng"]
+    }
+  }
 }
