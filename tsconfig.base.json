@@ -17,6 +17,7 @@
     "paths": {
       "@enterprise-angular/auth": ["libs/auth/src/index.ts"],
       "@enterprise-angular/data-models": ["libs/data-models"],
+      "@enterprise-angular/material": ["libs/material/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

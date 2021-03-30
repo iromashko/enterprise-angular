@@ -21,6 +21,7 @@
       "tags": [],
       "implicitDependencies": ["enteprise-ng"]
     },
-    "auth": { "tags": [] }
+    "auth": { "tags": [] },
+    "material": { "tags": [] }
   }
 }
