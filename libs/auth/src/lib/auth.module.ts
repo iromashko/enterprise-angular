@@ -5,6 +5,7 @@ import { LoginComponent } from './containers/login/login.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from '@enterprise-angular/material';
+import { ReactiveFormsModule } from '@angular/forms';
 
 export const authRoutes: Route[] = [
   {
@@ -14,7 +15,13 @@ export const authRoutes: Route[] = [
 ];
 
 @NgModule({
-  imports: [CommonModule, RouterModule, HttpClientModule, MaterialModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    HttpClientModule,
+    MaterialModule,
+    ReactiveFormsModule,
+  ],
   declarations: [LoginComponent, LoginFormComponent],
 })
 export class AuthModule {}

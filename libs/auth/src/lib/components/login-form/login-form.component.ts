@@ -1,5 +1,6 @@
 import { EventEmitter } from '@angular/core';
 import { Component, Output } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Authenticate } from '@enterprise-angular/data-models';
 
 @Component({
@@ -10,7 +11,15 @@ import { Authenticate } from '@enterprise-angular/data-models';
 export class LoginFormComponent {
   @Output() submit = new EventEmitter<Authenticate>();
 
-  login(authenticate: Authenticate) {
-    this.submit.emit(authenticate);
+  loginForm = new FormGroup({
+    username: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required])
+  });
+
+  login() {
+    this.submit.emit({
+      username: this.loginForm.value.username,
+      password: this.loginForm.value.password,
+    } as Authenticate);
   }
 }

@@ -7,6 +7,7 @@ import { NxModule } from '@nrwl/angular';
 import { AppComponent } from './app.component';
 import { AuthModule } from '@enterprise-angular/auth';
 import { authRoutes } from '@enterprise-angular/auth';
+import { LayoutModule } from '@enterprise-angular/layout';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +19,7 @@ import { authRoutes } from '@enterprise-angular/auth';
       initialNavigation: 'enabled',
     }),
     AuthModule,
+    LayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
