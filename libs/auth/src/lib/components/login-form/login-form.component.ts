@@ -9,7 +9,7 @@ import { Authenticate } from '@enterprise-angular/data-models';
   styleUrls: ['./login-form.component.scss'],
 })
 export class LoginFormComponent {
-  @Output() submit = new EventEmitter<Authenticate>();
+  @Output() submitClick = new EventEmitter<Authenticate>();
 
   loginForm = new FormGroup({
     username: new FormControl('', [Validators.required]),
@@ -17,7 +17,7 @@ export class LoginFormComponent {
   });
 
   login() {
-    this.submit.emit({
+    this.submitClick.emit({
       username: this.loginForm.value.username,
       password: this.loginForm.value.password,
     } as Authenticate);

@@ -23,6 +23,7 @@
     },
     "auth": { "tags": [] },
     "material": { "tags": [] },
-    "layout": { "tags": [] }
+    "layout": { "tags": [] },
+    "products": { "tags": [] }
   }
 }
