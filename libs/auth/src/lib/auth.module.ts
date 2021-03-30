@@ -6,6 +6,10 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from '@enterprise-angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import * as fromAuth from './+state/auth.reducer';
+import { AuthEffects } from './+state/auth.effects';
 
 export const authRoutes: Route[] = [
   {
@@ -21,6 +25,8 @@ export const authRoutes: Route[] = [
     HttpClientModule,
     MaterialModule,
     ReactiveFormsModule,
+    StoreModule.forFeature(fromAuth.AUTH_FEATURE_KEY, fromAuth.reducer),
+    EffectsModule.forFeature([AuthEffects]),
   ],
   declarations: [LoginComponent, LoginFormComponent],
 })

@@ -1,5 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
+import { Authenticate } from '@enterprise-angular/data-models';
+import { Store } from '@ngrx/store';
+import { login } from '../../+state/auth.actions';
+import { AuthState } from '../../+state/auth.reducer';
 
 @Component({
   selector: 'enterprise-angular-login',
@@ -8,9 +11,9 @@ import { AuthService } from '../../services/auth.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginComponent {
-  constructor(private authService: AuthService) {}
+  constructor(private store: Store<AuthState>) {}
 
-  login(authenticate: any) {
-    this.authService.login(authenticate).subscribe();
+  login(authenticate: Authenticate) {
+    this.store.dispatch(login({ payload: authenticate }));
   }
 }
